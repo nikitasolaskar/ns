@@ -1,0 +1,73 @@
+
+3:40 PM
+using System;
+                   
+public class Program
+{​​​​​​​
+    public static void Main(string[] args)
+    {​​​​​​​
+        int[] a=new int[10];
+        for(int i=0;i<a.Length;i++)
+        {​​​​​​​
+           Console.WriteLine("enter value: " );
+           a[i]=Convert.ToInt32(Console.ReadLine());
+        }​​​​​​​
+        foreach(var item in a)
+        {​​​​​​​
+            if(item%2==0)
+            {​​​​​​​
+                Console.WriteLine("Even:" +(item));
+            }​​​​​​​
+            else
+            {​​​​​​​
+                Console.WriteLine("odd:" +(item));
+               
+            }​​​​​​​
+        }​​​​​​​
+    }​​​​​​​
+}​​​​​​​
+           
+       
+4:47 PM
+int[] arr1 = new int[3];
+int[] Counter = new int[3];
+
+int counter;
+//input values
+Console.WriteLine("Input elements");
+for (int i = 0; i < arr1.Length; i++)
+{​​​​​
+arr1[i] = Convert.ToInt32(Console.ReadLine());
+Counter[i] = -1;
+}​​​​​
+
+
+
+
+for (int i = 0; i < arr1.Length; i++)
+{​​​​​
+counter = 1;
+for (int j = i+1; j < arr1.Length; j++)
+{​​​​​
+if(arr1[i]== arr1[j])
+{​​​​​
+counter++;
+Counter[j] = 0;
+}​​​​​
+}​​​​​
+if (Counter[i] != 0)
+{​​​​​
+Counter[i] = counter;
+}​​​​​
+}​​​​​
+
+
+
+for (int i = 0; i < arr1.Length; i++)
+{​​​​​
+if(Counter[i]!=0)
+{​​​​​
+Console.WriteLine("{​​​​​0}​​​​​ occurs {​​​​​1}​​​​​",arr1[i],Counter[i]);
+}​​​​​
+}​​​​​
+Console.ReadLine();

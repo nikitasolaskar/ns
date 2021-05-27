@@ -1,0 +1,20 @@
+using System;
+					
+public class Program
+{
+	public static void Main(string[] args)
+	{
+		int []a=new int[3];
+ for( int i =0;i<a.Length;i++)  
+ {  
+   Console.WriteLine("Enter value for a["+i +"] : ");
+	   a[i]=Convert.ToInt32(Console.ReadLine());
+ }
+		foreach(var item in a)
+		{
+			Console.WriteLine(item);
+
+			 }
+		    Console.ReadLine();
+	}
+}
