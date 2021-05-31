@@ -1,0 +1,32 @@
+using System;
+
+namespace Day3
+{
+ public abstract class Wholesaller
+  {
+    public abstract void discount();
+    public void price()
+    {
+      Console.WriteLine("enter discount");
+    }
+  }
+  
+ 
+ public class Retailer :  Wholesaller
+  {
+    public override void discount()
+    {
+      Console.WriteLine("discount witg");
+    }
+  }
+
+   public class Program
+  {
+     public static void Main(string[] args)
+    {
+      Retailer r1 = new Retailer();
+      r1.discount();
+      r1.price();
+    }
+  }
+}

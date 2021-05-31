@@ -1,0 +1,37 @@
+using System;
+namespace Day_3
+{
+   class Student
+  {
+	public int StudentId;
+	public string StudentName;
+
+	
+	public void GetStudentData()
+	{
+	Console.WriteLine("Please enter student ID");
+	StudentId = Convert.ToInt32(Console.ReadLine());
+		
+    Console.WriteLine("Please enter Student Name");
+	StudentName = Console.ReadLine();
+	}
+	
+	public void PrintStudentDetails()
+	{
+	Console.WriteLine("Stuents details are:- ");
+	Console.WriteLine("Student ID :" + StudentId);
+	Console.WriteLine("Student Name : " + StudentName);;
+	}
+   }
+	
+  public class program
+    {
+  public static void Main(string[] args )
+	{
+	Student student = new Student();
+	student.GetStudentData();
+	student.PrintStudentDetails();
+	Console.ReadLine();
+	}
+    }
+}

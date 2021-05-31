@@ -1,0 +1,38 @@
+using System;
+namespace day_3
+{
+   public  class Shape //base class
+      {
+		public void displayshape()
+		{
+		Console.WriteLine("Shape :");	
+		}
+      }
+	
+     public class Rectangle : Shape //derievd class
+	{
+		float length= 100,breadth =20;
+		public void areaofreactangle()
+		{
+		Console.WriteLine(" area of ractangle is " + (length * breadth));	
+		}
+		 
+		 public class Square: Rectangle
+		 {
+			 int a=5;
+		   public void areaofsquare()
+		   {
+		    Console.WriteLine(" area of square is " + (a*a));	
+		   }	 
+		 }
+ 
+	public static void Main()
+	  {  
+		Square s1=new Square();
+		s1.displayshape();
+		s1.areaofreactangle();
+		s1.areaofsquare();
+		Console.ReadLine();
+	   }
+}
+}

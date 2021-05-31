@@ -1,0 +1,26 @@
+using System;
+namespace day_3
+{
+public  class Animals //base class
+{
+	public void eat()
+		{
+		Console.WriteLine("animal can eat");	
+		}
+	
+     public class Dog : Animals //derievd class
+	{
+		public void bark()
+		{
+		Console.WriteLine(" dog can bark");	
+		}
+	}
+ 
+	public static void Main()
+	  {
+		Dog d1=new Dog();
+		d1.eat();
+		d1.bark();
+	   }
+}
+}

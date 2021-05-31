@@ -1,0 +1,62 @@
+using System;
+
+namespace day_3
+{
+   public  class Person //base class
+      {
+	   public int age;
+		public void greet()
+		{
+		Console.WriteLine("Hello");	
+		}
+	   
+	   public void Setage(int n)
+		{
+		 age=x;
+		}
+      }
+	
+      public class Student: Person //derievd class
+	   {
+		 public void Study()
+		 {
+		  Console.WriteLine(" I'm Studing on screen");	
+		  }
+		 public void Showage()
+	     {
+		  Console.WriteLine("My age is " + age );	
+		 }
+	   }
+		 
+		   public class Teacher: Person
+		    {
+		      public void explain()
+		      {
+		       Console.WriteLine(" I'm explaining on screen ");	
+		      }	 
+		   }
+		 
+ public class StudentProfessorTest
+    {
+	  public static void Main()
+	   {  
+		Person p1=new Person();
+		  p1.greet();
+		  p1.Setage(33);
+		  
+		  Student s1=new Student();
+		   p1.Setage(21);
+		   s1.Study();
+		   s1.greet();
+		   s1.Showage();
+		  
+		   Teacher t1=new Teacher();
+		   t1.Setage(40);
+		   t1.greet();
+		   t1.explain();
+		  
+		Console.ReadLine();
+	   }
+     }
+	
+}
