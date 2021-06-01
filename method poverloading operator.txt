@@ -1,0 +1,35 @@
+using System;
+namespace day4
+{
+     public class Mul
+      {
+	    public int number1,number2;
+	    public Mul(int num1,int num2)
+	     {
+		  this.number1=number1;
+		  this.number2=number2;
+	     }
+	
+	     public  static Mul operator*(Mul m1,Mul m2)
+	       {
+		   Mul m3 =new Mul(0,0); 
+		   m3.number1 = m1.number1 * m2.number1;
+		   m3.number2 = m1.number2 * m2.number2;
+		   return m3;
+	       }
+	}
+	
+	    public class class1
+	   {
+		 public static  void Main ()
+	     {
+	 	  Mul m1 =new Mul(2,4); 	
+		  Mul m2 =new Mul(2,4); 
+		  Mul m3 =new Mul(0,0); 
+	      m3=m1*m2;
+		  Console.WriteLine("Values sum number 1:" + m3.number1+" || number 2:" + m3.number2);
+	     Console.WriteLine("Values sum number 1:" + m2.number2+" || number 2:" + m2.number2);
+		Console.ReadLine();
+		 }
+    }
+}

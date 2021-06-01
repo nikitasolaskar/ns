@@ -1,0 +1,38 @@
+using System;
+namespace day4
+{
+   public class Program
+   {
+	   int a=6,b=7;
+	   public  void Mul()
+	   {
+		Console.WriteLine("Multiplication is : " + (a*b));
+	   }
+	
+	   public  void Mul(int a,int b)
+	   {
+		Console.WriteLine("Multiplication is : " + (a*b));
+	   }
+	
+	   public  int Mul(int a,int b,int c)
+	   {
+		  return(a*b);
+	   }
+	
+	   public  void Mul(string a,string b)
+	    {
+		Console.WriteLine("Multiplication is : " + (Convert.ToInt32(a)+Convert.ToInt32(b)));
+	    }
+	   
+	   
+	    public static  void Main (string[] args)
+	    {
+	 	Program p =new Program(); 	
+		  p.Mul();
+		  p.Mul(8,8);
+		  p.Mul(1,2,3);
+		  p.Mul('2','4');
+		  Console.WriteLine();
+	     }
+    }
+}

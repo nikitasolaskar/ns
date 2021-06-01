@@ -1,0 +1,63 @@
+using System;
+
+namespace ConsoleApp6
+{
+    class Shape
+    {
+        public double Area()
+        {
+            return 0;
+        }
+        public double Perimeter()
+        {
+            return 0;
+        }
+    }
+    class Rectangle : Shape
+    {
+        double side1, side2;
+        public Rectangle(double side1, double side2)
+        {
+            this.side1 = side1;
+            this.side2 = side2;
+        }
+        public double Area()
+        {
+            return side1 * side2;
+        }
+        public double Perimeter()
+        {
+            return (2 * (side1 + side2));
+        }
+    }
+    class Circle : Shape
+    {
+        double radius;
+        public Circle(double radius)
+        {
+            this.radius = radius;
+        }
+        public double Area()
+        {
+            return ((22 / 7) * (radius * radius));
+        }
+        public double Perimeter()
+        {
+            return (2 * (22 / 7) * radius);
+        }
+    }
+    class Class11
+    {
+        public static void Main()
+        {
+            Rectangle r = new Rectangle(3.5, 2.5);
+            Console.WriteLine("Area of rectangle:" + r.Area());
+            Console.WriteLine("Perimeter of rectangle:" + r.Perimeter());
+            Console.WriteLine();
+            Circle c = new Circle(2.5);
+            Console.WriteLine("Area of Circle is: " + c.Area());
+            Console.WriteLine("Perimeter of Circle is: " + c.Perimeter());
+            Console.ReadLine();
+        }
+    }
+}
