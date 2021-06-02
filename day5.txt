@@ -1,0 +1,350 @@
+---------------------------stufdent-----------------
+using System;
+
+public class student
+{
+
+	public static void Main()
+	{
+		string[] sname = new string[10000];
+		int[] smarks = new int[10000];
+		int[] rollno = new int[10000];
+		int p;
+		char g;
+		for(int i=0;i<5;i++)
+		{
+			Console.WriteLine("enter name of student "+(i+1));
+			sname[i]=Console.ReadLine();
+			Console.WriteLine("enter total marks of student"+(i+1)+" out of 500");
+			smarks[i]=Convert.ToInt32(Console.ReadLine());
+			Console.WriteLine("enter roll no of student "+(i+1));
+			rollno[i]=Convert.ToInt32(Console.ReadLine());
+			
+		}
+			Console.Write("S.No\tRollNo\tName\t\tPercentage \t\tGrades");
+		Console.WriteLine();
+		for(int i=0;i<5;i++)
+		{
+			p=(smarks[i]*100)/500;
+			if(p>=90 &&p<=100)
+				g='A';
+			else if(p>=80&&p<=89)
+				g='B';
+			else if(p>=65&&p<=79)
+				g='C';
+			else if(p>=55&&p<=64)
+				g='D';
+			else if(p>=33&&p<=54)
+				g='E';
+			else
+				g='F';
+			Console.Write((i+1)+"\t\t"+rollno[i]+"\t\t"+sname[i]+"\t\t\t"+p+"\t\t\t\t\t"+g);
+		Console.WriteLine();	
+		}
+	}}
+----------------output----------------
+enter name of student 1
+a
+enter total marks of student1 out of 500
+454
+enter roll no of student 1
+1
+enter name of student 2
+r
+enter total marks of student2 out of 500
+345
+enter roll no of student 2
+2
+enter name of student 3
+b
+enter total marks of student3 out of 500
+231
+enter roll no of student 3
+3
+enter name of student 4
+s
+enter total marks of student4 out of 500
+[ConsoleInputLine_10]
+enter roll no of student 4
+[ConsoleInputLine_11]
+enter name of student 5
+[ConsoleInputLine_12]
+enter total marks of student5 out of 500
+[ConsoleInputLine_13]
+enter roll no of student 5
+[ConsoleInputLine_14]
+S.No    RollNo    Name        Percentage         Grades
+1        1        a            90                    A
+2        2        r            69                    C
+3        3        b            46                    E
+4        4        s            24                    F
+5        5        n            69                    C\
+
+
+------------------------Student structure------------------------
+using System;
+
+public struct Student
+{
+	public string name;
+	public int roll_no;
+	public int marks;
+}
+public class program
+{
+	public static void Main()
+	{
+		Student s;
+		s.name="Nikita Bhavsar";
+		s.roll_no=1;
+		s.marks=500;
+		Console.Write(" Name: "+s.name + "\n Roll_no: " +s.roll_no+ "\n marks: " +s.marks);
+		Console.WriteLine();	
+		}
+	}
+----------------------output-------------------
+Name: Nikita Bhavsar
+ Roll_no: 1
+ marks: 500
+
+-----------------------enum----------------------
+using System;
+
+public enum DayofWeek
+{
+	Sunday=1,Monday,Tuesday,Thursday,Friday,Saturday
+}
+public class program
+{
+	public static void Main()
+	{
+	
+		Console.Write(" \nDay of week {0}{1} ",(int) DayofWeek.Sunday,DayofWeek.Sunday);
+			Console.Write("\n Day of week {0}{1}",(int)DayofWeek.Monday,DayofWeek.Monday);
+		Console.Write(" \nDay of week {0}{1}",(int)DayofWeek.Tuesday,DayofWeek.Tuesday);
+		Console.Write(" \nDay of week {0}{1}",(int)DayofWeek.Thursday,DayofWeek.Thursday);
+			Console.Write("\n Day of week {0}{1}",(int)DayofWeek.Friday,DayofWeek.Friday);
+		Console.Write(" \nDay of week {0}{1}",(int)DayofWeek.Saturday,DayofWeek.Saturday);
+		
+		Console.WriteLine();	
+		}
+	}
+----------------------------output--------------------
+ 
+Day of week 1Sunday 
+ Day of week 2Monday 
+Day of week 3Tuesday 
+Day of week 4Thursday
+ Day of week 5Friday 
+Day of week 6Saturday		
+			
+---------------------Calculator using enum----------------------------------
+using System;
+public class Program
+    {
+	   
+public enum Choiceenum
+{
+	Addition,Multiplication,Subtraction,Divide
+}
+        public static void Main(string[] args)
+        {
+			Console.WriteLine("Enter number 1: ");
+			int Number1=Convert.ToInt32( Console.ReadLine());
+			Console.WriteLine("Enter number 2: ");
+			int Number2=Convert.ToInt32( Console.ReadLine());
+			Console.WriteLine("Enter your choice: ");
+                           var arr = Enum.GetValues(typeof(Choiceenum));
+/*  -----------------we yused for also foreach place------------
+            for (int i = 0;i< arr.Length; i++)
+            {
+                Console.WriteLine(arr.GetValue(i));
+            }
+
+
+ foreach (var item in Enum.GetValues(typeof(Choiceenum)))
+            {
+                Console.WriteLine(((int)item)+" " +item);
+            }
+            var arr = Enum.GetValues(typeof(Choiceenum));
+            for (int i = 0;i< arr.Length; i++)
+            {
+                Console.WriteLine(arr.GetValue(i));
+            }
+ -------------------------------------------------------- */
+			 foreach (var item in Enum.GetValues(typeof(Choiceenum)))
+            {
+                Console.WriteLine(((int)item)+" " +item);
+            }
+
+ 
+
+            int Choice = Convert.ToInt32(Console.ReadLine());
+            switch (Choice)
+            {
+                case (int)Choiceenum.Addition:
+                    Console.WriteLine("Addition of two number is  :- {0}" ,(Number1 + Number2));
+                    break;
+                case (int)Choiceenum.Multiplication:
+                    Console.WriteLine("Multiplication of two number is  :- {0}", (Number1 * Number2));
+                    break;
+                case (int)Choiceenum.Subtraction:
+                    Console.WriteLine("substraction of two number is  :- {0}", (Number1 - Number2));
+                    break;
+                case (int)Choiceenum.Divide:
+                    Console.WriteLine("Devision of two number is  :- {0}", (Number1/Number2));
+                    break;
+                default:
+                    Console.WriteLine("Please enter a valid Choice");
+                    break;
+            }
+            Console.ReadLine();
+            }
+       
+    }
+----------------------output-----------
+Enter number 1: 
+3
+Enter number 2: 
+3
+Enter your choice: 
+0 Addition
+1 Multiplication
+2 Subtraction
+3 Divide
+3
+Devision of two number is  :- 1 
+
+-----------------------enum gender-------------------
+using System;
+
+public struct Student
+{
+	public string name;
+	public int rollno;
+	public string gender;
+}
+	
+public class student
+{
+	public enum Gender
+	{
+		female=0,male=1
+	}
+
+	public static void Main()
+	{
+		Student[] arr = new Student[2];
+		arr[0].name="abc";
+		arr[0].rollno=12;
+		arr[1].name="def";
+		arr[1].rollno=32;
+			int c=0;
+		for(int i=0;i<2;i++)
+		{
+			Console.WriteLine("enter gender for student: "+(i+1));
+			Console.WriteLine("enter 0.for female\n1.for male");
+			c=Convert.ToInt32(Console.ReadLine());
+			if(c==1)
+			arr[i].gender=Gender.female.ToString();
+			else
+			arr[i].gender=Gender.male.ToString();	
+		}
+		Console.WriteLine("Name:\t\tRollNo\t\tGender");
+		Console.WriteLine();
+		for(int i=0;i<2;i++)
+		{
+			Console.WriteLine(arr[i].name+"\t\t\t"+arr[i].rollno+"\t\t\t"+arr[i].gender);
+			Console.WriteLine();
+			
+		}	
+	}	
+		}
+[---------------------output------------
+enter gender for student: 1
+enter 0.for female
+1.for male
+1
+enter gender for student: 2
+enter 0.for female
+1.for male
+2
+Name:        RollNo        Gender
+
+abc            12            female
+
+def            32            male
+
+------------------exception-----------------------------
+using System;
+ 
+	
+public class student
+{
+
+
+	public static void Main()
+	{
+		//int a=5;
+		//int c=a/0;
+		int[] arr=new int[2];
+		try
+		{
+			Console.WriteLine(arr[2]);
+		}
+		catch
+		{
+			Console.WriteLine("some exception comes");
+	}	
+		Console.ReadLine();
+	}
+
+		}
+-------------------output------------------------
+some exception comes
+>
+--------------------------player exception-------------------
+using System;
+public class MyException : Exception
+    {
+        public MyException(string message):base(message)
+        {
+
+        }
+    }
+    public class Fitness
+    {
+        int points = 0;
+        public void ShowResult()
+        {
+            if(points < 110)
+            {
+                throw new MyException("Player failed the fitness test!");
+            }
+            else
+            {
+                throw new MyException("Player passed the fitness test!");
+            }
+        }
+    }
+   public class Class6
+    {
+        public static void Main()
+        {
+            Fitness f = new Fitness();
+            try
+            {
+                f.ShowResult();
+            }
+            catch(MyException e)
+            {
+                Console.WriteLine("User defined exceptions: {0}", e.Message);
+            }
+            Console.ReadLine();
+
+        }
+
+
+    }
+-------------------output--------------
+User defined exceptions: Player failed the fitness test!
