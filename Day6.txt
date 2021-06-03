@@ -1,0 +1,169 @@
+//arraylist
+using System;
+using System.Collections;
+
+namespace Day6
+{
+	public class Program
+	{
+		public static void Main()
+		{
+			ArrayList arraylist=new ArrayList();
+			arraylist.Add("Cat");
+			arraylist.Add("Dog");
+			arraylist.Add(1);
+			arraylist.Add("Cat");
+			arraylist.Remove(1);
+			for(int i=0;i<arraylist.Count;i++)
+			{
+				Console.WriteLine(arraylist[i]);
+			}
+			
+		}
+	}
+}
+
+//hashtable
+using System;
+using System.Collections;
+
+namespace Day6
+{
+	public class Program
+	{
+		public static void Main()
+		{
+			Hashtable hashtable=new Hashtable();
+			hashtable.Add(1,"Cat");
+			hashtable.Add(2,"Dog");
+			hashtable.Add(3,"Rabbit");
+			ICollection keys=hashtable.Key;
+			for(var item in keys)
+			{
+				Console.WriteLine(items+" : "+hashtable[item]);
+			}
+			
+		}
+	}
+}
+
+//queue
+using System;
+using System.Collections;
+
+namespace Day6
+{
+	public class Program
+	{
+		public static void Main()
+		{
+			Queue queue = new Queue();
+            queue.Enqueue("C#");
+            queue.Enqueue("PHP");
+            queue.Enqueue("JAVA");
+            queue.Dequeue();
+            Console.WriteLine(queue.Peek());	
+		}
+		}
+	}
+}   
+
+//Stack
+using System;
+using System.Collections;
+
+namespace sixday
+{
+	public class Program
+	{
+		public static void Main()
+		{
+			Stack stack = new Stack();
+            stack.Push("C#");
+            stack.Push("PHP");
+            stack.Push("JAVA");
+            stack.Pop();
+            Console.WriteLine(stack.Peek());
+		}
+		}
+	}
+}
+
+//System collection,System collection generic and dictionary
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace Day6
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            //System.Collections
+			System.Collections.Stack stack1= new System.Collections.Stack();
+			stack1.Push(1);
+			int x1=(int) stack1.Pop();
+			
+			//System.Collections.Generic
+			Stack<int> stack=new Stack<int>();
+			stack.Push(1);
+			int x=stack.Pop();
+			
+			//dictionary
+			Dictionary<int,string> keyValuePairs = new Dictionary<int,string>();
+			keyValuePairs.Add(1,"Cat");
+			keyValuePairs.Remove(1);
+			keyValuePairs.Add(2,"Dog");
+			keyValuePairs.Add(3,"Rabbit");
+			
+			foreach(var item in keyValuePairs)
+			{
+				Console.WriteLine(item.Key+" "+item.Value);
+			}
+            Console.ReadLine();
+        }
+    }
+}
+
+//
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace Day6
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+             string Input = "aabbbbcd";
+            Dictionary<char, int> keyValuePairs = new Dictionary<char, int>();
+
+ 
+
+            foreach (var item in Input)
+            {
+                int counter;
+                keyValuePairs.TryGetValue(item, out counter);
+                if(counter==0)
+                {
+                    keyValuePairs.Add(item, 1);
+                }
+                else
+                {
+                    keyValuePairs.Remove(item);
+                    keyValuePairs.Add(item, counter+1);
+                }
+            }
+            foreach (var item in keyValuePairs)
+            {
+                Console.WriteLine(item.Key+" - "+item.Value);
+            }
+            Console.ReadLine();
+            Console.ReadLine();
+        }
+    }
+}
+
+//
